@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - CatVerse</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">🐱 CatVerse</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="breeds.html">Breeds</a></li>
+      <li><a href="adoption.html">Adoption</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2 data-aos="fade-up">Get in Touch 💌</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Shahad. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="breeds.html">Breeds</a>
+      <a href="adoption.html">Adoption</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </footer>
+
+  <footer class="footer">
+    <div class="contact-info">
+      <a href="https://wa.me/966533766940" target="_blank"><i class="fab fa-whatsapp"></i> +966 50 000 0000</a>
+      <a href="CatVerse@gmail.com"><i class="fas fa-envelope"></i> catverse@example.com</a>
+      <a href="https://twitter.com/CatVerse" target="_blank"><i class="fab fa-twitter"></i> @catverse</a>
+      <a href="https://instagram.com/CatVerse" target="_blank"><i class="fab fa-instagram"></i> @catverse</a>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Contact form submission
+    if (document.getElementById('contact-form')) {
+      document.getElementById('contact-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('We have received your comment and will reply to you soon.🐾🐱💜');
+      });
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

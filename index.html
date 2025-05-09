@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CatVerse Ultimate</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">🐱 CatVerse</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="breeds.html">Breeds</a></li>
+      <li><a href="adoption.html">Adoption</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="hero" class="hero-section">
+    <div class="hero-content" data-aos="fade-up">
+      <p class="welcome">Welcome to CatVerse 🐾</p>
+      <h1>Discover the World of Cats</h1>
+      <p class="subtext">Your ultimate destination for exploring cat breeds, learning fun facts, and finding your perfect feline friend.</p>
+      <a href="breeds.html"><button>Explore Breeds</button></a>
+    </div>
+    <div class="hero-image" data-aos="fade-left">
+      <img src="https://cdn2.thecatapi.com/images/bpc.jpg" alt="Cute Cat" />
+    </div>
+
+    <!-- Facts -->
+    <div class="facts-grid" id="factsContainer">
+      <!-- Filled by JS -->
+    </div>
+  </header>
+
+  <!-- Why You'll Love Section -->
+  <section id="love" class="why-love-section">
+    <h2 data-aos="fade-up">Why You'll Love CatVerse 🐾</h2>
+    <div class="love-grid">
+      <div class="love-card" data-aos="fade-right">
+        <img src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2" alt="Cat Facts" class="love-image">
+        <h3>Cat Facts</h3>
+        <p>Learn fascinating and delightful facts about cats with every visit—did you know they can jump up to six times their length?</p>
+      </div>
+      <div class="love-card" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba" alt="Real Images" class="love-image">
+        <h3>Real Images</h3>
+        <p>Enjoy stunning, high-quality photos showcasing the beauty and charm of various cat breeds.</p>
+      </div>
+      <div class="love-card" data-aos="fade-left">
+        <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5" alt="Discover Breeds" class="love-image">
+        <h3>Discover Breeds</h3>
+        <p>Dive into the world of cats—explore their unique names, origins, personalities, and traits to find your perfect match.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fun Facts Section -->
+  <section id="facts" class="facts-section">
+    <h2 data-aos="fade-up">Fun Cat Facts 🐾🐱</h2>
+    <div class="facts-grid" data-aos="fade-up">
+      <p id="fact1">Loading fact...</p>
+      <p id="fact2">Loading fact...</p>
+      <p id="fact3">Loading fact...</p>
+      <p id="fact4">Loading fact...</p>
+      <p id="fact5">Loading fact...</p>
+      <p id="fact6">Loading fact...</p>
+      <p id="fact7">Loading fact...</p>
+      <p id="fact8">Loading fact...</p>
+      <p id="fact9">Loading fact...</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Shahad. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#hero">Home</a>
+      <a href="breeds.html">Breeds</a>
+      <a href="adoption.html">Adoption</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <footer class="footer">
+    <div class="contact-info">
+      <a href="https://wa.me/966533766940" target="_blank"><i class="fab fa-whatsapp"></i> +966 53 376 6940</a>
+      <a href="mailto:CatVerse@gmail.com"><i class="fas fa-envelope"></i> catverse@example.com</a>
+      <a href="https://twitter.com/CatVerse" target="_blank"><i class="fab fa-twitter"></i> @catverse</a>
+      <a href="https://instagram.com/CatVerse" target="_blank"><i class="fab fa-instagram"></i> @catverse</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Fetch random cat facts
+    const factIds = ['fact1','fact2','fact3','fact4','fact5','fact6','fact7','fact8','fact9'];
+    factIds.forEach(id => {
+      fetch('https://catfact.ninja/fact')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById(id).textContent = data.fact;
+        })
+        .catch(() => {
+          document.getElementById(id).textContent = 'Could not load fact.';
+        });
+    });
+  </script>
+</body>
+</html>
